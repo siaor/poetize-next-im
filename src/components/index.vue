@@ -678,9 +678,9 @@
       function buildCssPicture() {
         let root = document.querySelector(":root");
         let webStaticResourcePrefix = store.state.sysConfig['webStaticResourcePrefix'];
-        root.style.setProperty("--commentURL", "url(" + webStaticResourcePrefix + "assets/commentURL.jpg)");
-        root.style.setProperty("--imBackground", "url(" + webStaticResourcePrefix + "assets/backgroundPicture.jpg)");
-        const font = new FontFace("poetize-font", "url(" + webStaticResourcePrefix + "assets/font.woff2)");
+        root.style.setProperty("--commentURL", "url(" + webStaticResourcePrefix + "sys/commentURL.jpg)");
+        root.style.setProperty("--imBackground", "url(" + webStaticResourcePrefix + "sys/backgroundPicture.jpg)");
+        const font = new FontFace("poetize-font", "url(" + webStaticResourcePrefix + "sys/font.woff2)");
         font.load();
         document.fonts.add(font);
       }

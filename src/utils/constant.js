@@ -1,19 +1,19 @@
 export default {
   // 测试环境
-  baseURL: "http://localhost:8081",
-  webBaseURL: "http://localhost",
-  imURL: "http://localhost:81/im",
-  imBaseURL: "localhost",
-  wsProtocol: "ws",
-  wsPort: "9324",
+  // baseURL: "http://localhost:8081",
+  // webBaseURL: "http://localhost",
+  // imURL: "http://localhost:81/im",
+  // imBaseURL: "localhost",
+  // wsProtocol: "ws",
+  // wsPort: "9324",
 
   // 生产环境
-  // baseURL: location.protocol + "//" + location.hostname + (location.port ? ':' + location.port : '') + "/api",
-  // webBaseURL: location.protocol + "//" + location.hostname + (location.port ? ':' + location.port : ''),
-  // imURL: location.protocol + "//" + location.hostname + (location.port ? ':' + location.port : '') + "/im",
-  // imBaseURL: location.hostname + (location.port ? ':' + location.port : ''),
-  // wsProtocol: location.protocol === "http:" ? "ws" : "wss",
-  // wsPort: "",
+  baseURL: location.protocol + "//" + location.hostname + (location.port ? ':' + location.port : '') + "/api",
+  webBaseURL: location.protocol + "//" + location.hostname + (location.port ? ':' + location.port : ''),
+  imURL: location.protocol + "//" + location.hostname + (location.port ? ':' + location.port : '') + "/im",
+  imBaseURL: location.hostname + (location.port ? ':' + location.port : ''),
+  wsProtocol: location.protocol === "http:" ? "ws" : "wss",
+  wsPort: "",
 
   webHistory: "/im/",
   hitokoto: "https://v1.hitokoto.cn",
