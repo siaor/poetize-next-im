@@ -2,7 +2,7 @@ const CompressionPlugin = require('compression-webpack-plugin')
 
 module.exports = {
   devServer: {
-    port: 81,
+    port: 4102,
     https: false,
     open: false
   },
