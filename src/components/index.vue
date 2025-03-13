@@ -679,7 +679,7 @@
         let root = document.querySelector(":root");
         let webStaticResourcePrefix = store.state.sysConfig['webStaticResourcePrefix'];
         root.style.setProperty("--commentURL", "url(" + webStaticResourcePrefix + "sys/commentURL.jpg)");
-        root.style.setProperty("--imBackground", "url(" + webStaticResourcePrefix + "sys/backgroundPicture.jpg)");
+        root.style.setProperty("--imBackground", "url(" + webStaticResourcePrefix + "sys/backend-bg.jpg)");
         const font = new FontFace("poetize-font", "url(" + webStaticResourcePrefix + "sys/font.woff2)");
         font.load();
         document.fonts.add(font);
