@@ -11,9 +11,9 @@ export default {
   baseURL: location.protocol + "//" + location.hostname + (location.port ? ':' + location.port : '') + "/api",
   webBaseURL: location.protocol + "//" + location.hostname + (location.port ? ':' + location.port : ''),
   imURL: location.protocol + "//" + location.hostname + (location.port ? ':' + location.port : '') + "/im",
-  imBaseURL: location.hostname + (location.port ? ':' + location.port : ''),
   wsProtocol: location.protocol === "http:" ? "ws" : "wss",
-  wsPort: "",
+  wsURL: location.hostname,
+  wsPort: "4141",
 
   webHistory: "/im/",
   hitokoto: "https://v1.hitokoto.cn",
