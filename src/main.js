@@ -58,6 +58,7 @@ app.component(ElRadioButton.name, ElRadioButton)
 app.config.globalProperties.$http = http
 app.config.globalProperties.$common = common
 app.config.globalProperties.$constant = constant
+constant.init();
 
 router.beforeEach((to, from, next) => {
   if (to.meta.requiresAuth) {

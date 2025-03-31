@@ -1,11 +1,10 @@
 import Tiows from "./tiows";
-import constant from "./constant";
 import {ElMessage} from "element-plus";
 
 export default function () {
-  this.ws_protocol = constant.wsProtocol;
-  this.ip = constant.wsURL;
-  this.port = constant.wsPort;
+  this.ws_protocol = location.protocol === "http:" ? "ws" : "wss";
+  this.ip = localStorage.getItem("wsURL");
+  this.port = localStorage.getItem("wsPort");
   this.paramStr = 'Authorization=' + localStorage.getItem("userToken");
   this.binaryType = 'blob';
 

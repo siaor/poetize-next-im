@@ -1,19 +1,28 @@
-export default {
-  // 测试环境
-  // baseURL: "http://localhost:8081",
-  // webBaseURL: "http://localhost",
-  // imURL: "http://localhost:81/im",
-  // imBaseURL: "localhost",
-  // wsProtocol: "ws",
-  // wsPort: "9324",
 
-  // 生产环境
-  baseURL: location.protocol + "//" + location.hostname + (location.port ? ':' + location.port : '') + "/api",
-  webBaseURL: location.protocol + "//" + location.hostname + (location.port ? ':' + location.port : ''),
-  imURL: location.protocol + "//" + location.hostname + (location.port ? ':' + location.port : '') + "/im",
-  wsProtocol: location.protocol === "http:" ? "ws" : "wss",
-  wsURL: location.hostname,
-  wsPort: "4141",
+const webBaseURL = location.protocol + "//" + location.hostname + (location.port ? ':' + location.port : '');
+
+export default {
+  async init(){
+    // 系统配置初始化
+    if(!localStorage.getItem("isInit")){
+      const sys = await fetch("./config/sys.json",{cache: "reload"}).then(response => response.json());
+
+      const wsURL = sys.wsURL ? sys.wsURL : location.hostname;
+      localStorage.setItem("wsURL", wsURL);
+
+      const wsPort = sys.wsPort ? sys.wsPort : location.port;
+      localStorage.setItem("wsPort", wsPort);
+
+      localStorage.setItem("isInit", true);
+    }
+  },
+
+  // 基础地址
+  webBaseURL: webBaseURL,
+  // 后端接口地址
+  baseURL: webBaseURL + "/api",
+  // 微聊室地址
+  imURL: webBaseURL + "/im",
 
   webHistory: "/im/",
   hitokoto: "https://v1.hitokoto.cn",
